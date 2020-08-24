@@ -6,6 +6,11 @@ workspace:
   path: src/github.com/shyamalarora/go-drone-hello-world
 
 steps:
+  - name: test
+  image: golang
+  commands:
+    - go get
+    - go test
 #   - name: report
 #     image: golang
 #     volumes:
@@ -32,7 +37,7 @@ steps:
      - chmod +x output
      - ./output
 
-volumes:
-  - name: reports
-    host:
-      path: /home/dev/work/src/github.com/cyantarek/drone-go-git-test/reports
+# volumes:
+#   - name: reports
+#     host:
+#       path: /home/dev/work/src/github.com/cyantarek/drone-go-git-test/reports
