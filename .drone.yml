@@ -11,26 +11,15 @@ steps:
     commands:
       - go get
       - go test
-
-#   - name: report
-#     image: golang
-#     volumes:
-#       - name: reports
-#         path: /var/reports
-#     commands:
-#       - mkdir -p /var/reports
-#       - go get
-#       - go get github.com/360EntSecGroup-Skylar/goreporter
-#       - goreporter -p ./ -f html -r /var/reports/
-
- - name: build
+      
+  - name: build
    image: golang
    commands:
      - go get
      - go build -o output
      - chmod +x output
 
- - name: run
+  - name: run
    image: golang
    commands:
      - go get
